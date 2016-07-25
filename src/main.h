@@ -37,7 +37,7 @@ static const unsigned int MAX_P2SH_SIGOPS = 15;
 /** The maximum number of sigops we're willing to relay/mine in a single tx */
 static const unsigned int MAX_TX_SIGOPS = MAX_BLOCK_SIGOPS/5;
 /** The maximum number of orphan transactions kept in memory */
-static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
+static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/50;
 /** Default for -maxorphanblocksmib, maximum number of memory to keep orphan blocks */
 static const unsigned int DEFAULT_MAX_ORPHAN_BLOCKS = 40;
 /** The maximum number of entries in an 'inv' protocol message */
@@ -143,7 +143,8 @@ uint256 WantedByOrphan(const COrphanBlock* pblockOrphan);
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake);
 void ThreadStakeMiner(CWallet *pwallet);
 
-static const signed int AVG_FEE_START_BLOCK = 123000;
+static const signed int AVG_FEE_START_BLOCK = 619480;
+static const signed int AVG_FEE_START_BLOCK_TESTNET = 123000;
 static const signed int AVG_FEE_SPAN = 1440;
 int64_t GetRunningFee(int64_t nFees);
 
